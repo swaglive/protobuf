@@ -309,7 +309,7 @@ def HasLibraryDirsOpt():
 if __name__ == '__main__':
   ext_module_list = []
   warnings_as_errors = '--warnings_as_errors'
-  if GetOptionFromArgv('--cpp_implementation'):
+  if GetOptionFromArgv('--cpp_implementation') or os.environ.get('PROTOBUF_CPP_IMPLEMENTATION'):
     # Link libprotobuf.a and libprotobuf-lite.a statically with the
     # extension. Note that those libraries have to be compiled with
     # -fPIC for this to work.
